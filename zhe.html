@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        .con {
+            width: 500px;
+            height: 300px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .con img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 300px;
+        }
+
+        .con .zhe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            background: rgba(255, 0, 0, .3);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <img src="00.jpg" alt="">
+        <div class="zhe"></div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('.con').hover(function () {
+            $('.zhe').animate({ "height": "300px" }, 500)}, function () {
+                $('.zhe').animate({ "height": "0px" }, 500)
+            
+        })
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        #textfalse{
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="tab">
+        <li><input type="checkbox"><a href="javascript:;">篮球</a></li>
+        <li><input type="checkbox"><a href="javascript:;">足球</a></li>
+        <li><input type="checkbox"><a href="javascript:;">排球</a></li>
+        <li><input type="checkbox"><a href="javascript:;">乒乓球</a></li>
+    </ul>
+    <div id='textfalse'>你选不中我</div>
+    <input type='password'>
+    <!-- 在浏览器节点里面把'password'改成'text'就可以看到密码 -->
+</body>
+<script>
+    document.getElementById("tab").onclick = function (e) {
+        if (e.target.nodeName == "INPUT") {
+            if (e.target.checked ==true) {
+                e.target.nextSibling.style.textDecoration = "line-through"
+                   
+            }else{
+                e.target.nextSibling.style.textDecoration = ""
+            }
+              
+        }
+        
+    }
+
+   
+</script>
+
+</html>
