@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+本项目用到的技术栈：
+    1.JSX、State、事件处理等必备知识
+    2.状态提升、组件解耦、组合
+    3.Refs转发
+    4.高阶组件
+    5.Runder Props
+    6.错误边界（Error Boundaries）
+技术栈-其他
+    Hooks+Context/Redux Toolkit管理客户端全局状态
+    React Query管理服务端全局状态
+    性能优化、性能监控、性能报告
+    自动化测试：单元测试、集成测试、e2e测试
+    CSS-in-JS、Grid、Flexbox
+    React Router6
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    创建项目：
+        npx create-react-app Jira --template typescript
+        public/robots文件：里面的Disallow:/sectet设置的是不允许爬虫访问的文件
+        gitignore:设置的是不允许长传git的文件
+    文件配置：
+        tsconfig.json里面配置："baseUrl": "./src",//默认会在src下面的目录寻找文件
+        Prettier格式化文档：
+            安装依赖：npm install --save-dev --save-exact prettier
+            新建配置文件：echo {}> .prettierrc.json
+            再新建一个 .prettierignore的文件//不需要格式化的文件 文件里面
+                build
+                coverage
+            提交代码之前自动进行格式化：npx mrm@2 lint-staged
+            安装eslint:npm install eslint-plugin-prettier
+                package.json的eslintConfig里面添加上"prettier"
+                安装commitlint的依赖//作用就是每次commit之前格式化代码
+                npm install --save-dev @commitlint/config-conventional @commitlint/cli
+                在package.json文件里添加
+                    "husky": {
+                        "hooks": {
+                        "pre-commit": "lint-staged",
+                        "commit-msg": "commitlint -E HUSKY_GIT_PRAMS"
+                        }
+                    },
+                
